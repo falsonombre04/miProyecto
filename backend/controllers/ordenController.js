@@ -24,6 +24,7 @@ const getAllOrden = async(req,res)=>{
 const getOrdenById = async(req,res)=>{
 	try{
 		const {id} = req.params
+		console.log("getId:",id)
 		const datos = await OrderModel.findById(id);
 		res.status(200).json(datos);
 	}
@@ -35,6 +36,7 @@ const getOrdenById = async(req,res)=>{
 const updateOrdenById = async(req,res)=>{
 	try{
 		const {id} = req.params
+		console.log("updateId:",id)
 		const datos = await OrderModel.findByIdAndUpdate(id,req.body,{new:true});
 		res.status(200).json(datos);
 	}
@@ -46,6 +48,7 @@ const updateOrdenById = async(req,res)=>{
 const deleteOrdenById = async(req,res)=>{
 	try{
 		const {id} = req.params
+		console.log("updateId:",id)
 		const datos = await OrderModel.findByIdAndDelete(id);
 		res.status(200).json({msg:'Producto eliminado..'});
 	}
